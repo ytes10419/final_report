@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 bucket_name = "store-ytes"
 replicate.api_token = "r8_3XfTRKMjfKHUxcNLGEWkRAMzn7mHKMr3G0K4i"
-service_account_path = "E:/rep/causal-destiny-425314-p0-4c33dc2ed62d.json"
+service_account_path = "causal-destiny-425314-p0-4c33dc2ed62d.json"
 
 # 預設的 LoRA 模型 ID
 lora_model = "ostris/flux-dev-lora-trainer"  # LoRA 模型的 ID
