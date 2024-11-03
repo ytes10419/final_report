@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Storybook Image Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Storybook Image Generator</h1>
+        <form action="/generate" method="POST">
+            <div class="form-group">
+                <label for="prompt">提示詞:</label>
+                <input type="text" name="prompt" required>
+              </div>
+      
+              <div class="form-group">
+                <label for="version">主模型:</label>
+                <input type="text" name="version" placeholder="請輸入模型 ID" required>
+              </div>
+      
+              <div class="form-group">
+                <label for="lora_scale">LoRA縮放:</label>
+                <input type="number" name="lora_scale" value="1.0" step="0.1" readonly>
+              </div>
+      
+              <div class="form-group">
+                <label for="guidance_scale">引導縮放:</label>
+                <input type="number" name="guidance_scale" value="7.5" step="0.1">
+              </div>
+      
+              <div class="form-group">
+                <label for="num_inference_steps">推理步驟數:</label>
+                <input type="number" name="num_inference_steps" value="50" min="1">
+              </div>
+      
+              <div class="form-group">
+                <label for="num_outputs">輸出數量:</label>
+                <input type="number" name="num_outputs" value="1" min="1">
+              </div>
+      
+              <div class="form-group">
+                <label for="aspect_ratio">寬高比:</label>
+                <select name="aspect_ratio">
+                    <option value="1:1">1:1</option>
+                    <option value="16:9">16:9</option>
+                    <option value="4:3">4:3</option>
+                </select>
+              </div>
+            <label for="story">Story Description:</label>
+            <textarea name="story" id="story" rows="4" placeholder="Enter the next part of your story..." required></textarea>
+            
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</body>
+</html>

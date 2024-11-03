@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Generated Storybook</title>
+</head>
+<body>
+    <div class="container">
+        <h1>生成圖片</h1>
+        <p id="page-number">頁碼: 1</p>
+
+        <div class="card" id="card"> <!-- 確保這裡有 id="card" -->
+            <div class="imgBox" id="imgBox">
+                <img id="current-image" src="{{ image_url }}" alt="Generated Image">
+            </div>
+            <div class="contents">
+                <p id="current-story">{{ story }}</p>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button id="prev" onclick="prevPage()">上一頁</button>
+            <button id="next" onclick="nextPage()">下一頁</button>
+            <button id="delete" onclick="deletePage()">刪除生成的圖片</button>
+            <a href="{{ url_for('index') }}">生成更多圖片</a>
+        </div>
+    </div>
+
+    <script>
+        let scenes = JSON.parse(localStorage.getItem('generatedScenes')) || [];
+        let currentPage = 0; // 初始化為0，代表第一頁
+
+        // 添加新生成的圖片和故事
+        scenes.push({ image: "{{ image_url }}", story: "{{ story }}" });
+        localStorage.setItem('generatedScenes', JSON.stringify(scenes));
+
+        function renderCurrentScene() {
+            const currentImage = document.getElementById('current-image');
+            const currentStory = document.getElementById('current-story');
+            const pageNumber = document.getElementById('page-number');
+
+            if (scenes.length === 0) return; // 如果沒有場景則退出
+
+            currentImage.src = scenes[currentPage].image;
+            currentStory.innerText = scenes[currentPage].story;
+            pageNumber.innerText = `Page: ${currentPage + 1}`;
+
+            // 更新按鈕狀態
+            document.getElementById('prev').disabled = currentPage === 0;
+            document.getElementById('next').disabled = currentPage === scenes.length - 1;
+        }
+
+        function nextPage() {
+            if (currentPage < scenes.length - 1) {
+                currentPage++;
+                flipCard();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                flipCard();
+            }
+        }
+
+        function flipCard() {
+            const card = document.getElementById('card');
+            card.classList.add('flip');
+            setTimeout(() => {
+                renderCurrentScene();
+                card.classList.remove('flip');
+            }, 600); // 與動畫時間相同
+        }
+
+        function deletePage() {
+            if (scenes.length > 1) {
+                scenes.splice(currentPage, 1);
+                localStorage.setItem('generatedScenes', JSON.stringify(scenes));
+
+                // 更新 currentPage 的值
+                if (currentPage >= scenes.length) {
+                    currentPage = scenes.length - 1; // 如果當前頁面超出範圍，則設置為最後一頁
+                }
+
+                renderCurrentScene();
+            } else {
+                alert("Cannot delete the last remaining page.");
+            }
+        }
+
+        renderCurrentScene(); // 初始顯示
+    </script>
+</body>
+</html>

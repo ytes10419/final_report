@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型训练</title>
+</head>
+<body>
+    <form id="uploadForm" onsubmit="uploadFile(); return false;">
+        <input type="file" name="file" required>
+        <input type="text" name="triggerWord" placeholder="触发词">
+        <input type="text" name="autocaptionPrefix" placeholder="自动标题前缀">
+        <button type="submit">上传</button>
+    </form>
+    <div id="result"></div>
+    <div id="modelNameDisplay"></div>
+    <div id="trainedVersionDisplay"></div>
+
+    <script>
+        let trainingId = null;
+
+        async function uploadFile() {
+            const formData = new FormData(document.getElementById("uploadForm"));
+            const response = await fetch("/upload", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById("result").innerText = result.message;
+
+            // 获取 training_id
+            if (result.training_id) {
+                trainingId = result.training_id;
+                checkTrainingStatus();
+            }
+        }
+
+        async function checkTrainingStatus() {
+            const interval = setInterval(async () => {
+                if (!trainingId) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const response = await fetch(`/check_status/${trainingId}`);
+                const result = await response.json();
+
+                if (result.status === 'completed') {
+                    clearInterval(interval);
+                    document.getElementById("result").innerText = "訓練完成! 版本: " + result.trained_version;
+                } else {
+                    document.getElementById("result").innerText = "訓練狀態: " + result.status;
+                }
+            }, 5000); // 每5秒检查一次状态
+        }
+    </script>
+</body>
+</html>

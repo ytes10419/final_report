@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "causal-destiny-425314-p0",
+  "private_key_id": "4c33dc2ed62dd5943c79513a5f1fad68b6cf025e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCQQPaS0pV0ZTXV\nDjQcIGUxYQojnboA6byeWUIqUh5hcx/cxleDdH7NO7rcKs+EEA1h/500iWhV+aBd\nnuRD17FxRwI0yhz7TJv11BIk8+vznXR9gy/w8Z+bqecVYQG7d5IfCzFZ5tedePMc\nYiEybAhBgEX5YHrGSjEUvjJHnsC997CLGwjhx8KV+hjg1y425MnndzRM8daT8o5E\n8TDFGMG0x0caTBILHSIHLgVVcWIOSINvgvvlqS10RfRP/ZSfyB2FZhu3FGu5tz9h\nEXtdDIDXVaqGr/IjKkiIOdZfbc/jlUgNiMOtiPzJsi26jJOpxZErXpkVtpOoRWux\ntqM/BsX3AgMBAAECggEADcvoyUoSuTsk1uew3C/M/dgGHDntnEC+pXZr+Zg5B6D3\nHyppHE18Ayz/RidiCYNvhDvqUSgDLpXdXJbhxgtPEUJ1V48tDmvZTr2lrpsVqgsZ\nJRfy8dxqI30weL76Z2+cLhPn+G03mfwDZGeOPUBP2dPm3V743xYhc5ZtQKRSUtjE\n41SePlxUR9ayFdf9b0Z+LKY/Tz8Q82CP7Ba5qfl4U0KMdW/LhwKjBHrZXT/QArxs\ntRXLtZXJhBTrrf6q2ZrMl0qmFGtmMF8pql7ydO97lr7xhITl7ytqiqyyQRJlRAos\nIC8O9tIR4xGhe+Me5SAqIdvUerhyOzpEiyvz4q3TYQKBgQDIWPPn9ikenurYeF+A\n4QJ1vhokkJ4Fp8a5KJnAjQ7oMqBeA+lSuDBVF86boxIFx+Ycy2tvVqcFnZOdWY2M\nObVP9ZgrC2F362cIuAm+MoOnR/KtuOBuZfvKVYaZTlp7grkxdRBEc1zFuNjhhSrX\nHPJBch61tC+zTDWxoME+48AhhQKBgQC4UxeLUM2/E9q7PWqjEr4AY1esBO4HY16B\ncF5kQ6xO8PZmuBx1h5renXLHTbBXGzyvcS6NPMW+4Q2CdpY6DUvkgu3nj2AuTTI7\n01FigDluTHcSOjB0tMtr0LWmsc33KIUrP03kcIhTm+VdTOHeMbQjXiwwOUzXYzqz\nzKZcFKFkSwKBgCaPqHJvGL8CC2Wa1ZbyuAx9iH6dLy0be85LmDxNah8bD27JBfGb\n7gGS0Xt3SZK/RPUp2gXWAdO83pqcj/f7a4B2XtF6IUp5jp1I/ucSxfA+kuEJAnl9\nO5dYGs4LHLNFF+wDAhyKr8KGr4fIn9RDiAU8t9h1U/EIrBUCQe+e2m4ZAoGBAJuY\nOLW3nhaAEhIgxBWoSo9VTLq+5peCAFLPoj6NCbURn04SeKOVttvYmP04zXSaX13R\n8vPyqxJ4M8k/hYy3kKrzAxSHaS9spsztkzPM/a3oClNun1zFCTqX0d9HFJBguhlJ\ntNzzSYEahkF+FuRTnLaGVlLW69CdyP3h8USlfZ+FAoGAMztTebob0cFTupOzWXxI\n57Gj9cT8cdSacTSPdTj1baPJY8o1ExIBbLCB8dr8iDpq9Kc0fIlKxK3Ri23AnhqU\nrZMbcpdPLpXCzU7a2LFoweoP2QCaYHqVZCTOBeVRKPD3g5wqQ8LznyfMWf7DECED\ngJlERj96dLJ4wFF+qw9D9bk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "storage-admin@causal-destiny-425314-p0.iam.gserviceaccount.com",
+  "client_id": "100032359938274532341",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/storage-admin%40causal-destiny-425314-p0.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

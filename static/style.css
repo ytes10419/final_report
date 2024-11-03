@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1c23;
+    color: #e4e4e6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #e4e4e6;
+    margin-bottom: 10px;
+}
+
+/* 當前頁數顯示 */
+#page-number {
+    font-size: 18px;
+    color: #e4e4e6;
+    margin-bottom: 20px;
+}
+
+/* 書本外觀 */
+.card {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    perspective: 1000px;
+    margin: 0 auto;
+    transition: transform 0.6s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background: #2b2e36;
+    border: 1px solid #3c3f47;
+}
+
+.imgBox {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+
+.imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contents {
+    position: relative;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: #e4e4e6;
+}
+
+/* 分頁按鈕 */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pagination button {
+    background-color: #5298d6;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(82, 152, 214, 0.4);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.pagination button:hover {
+    background-color: #457aa6;
+    transform: translateY(-2px);
+}
+
+.pagination button:disabled {
+    background-color: #3c3f47;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 翻頁效果 */
+.card.flip {
+    transform: rotateY(180deg);
+}
